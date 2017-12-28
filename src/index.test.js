@@ -30,6 +30,22 @@ it("should render with the default option text specified", () => {
   expect(select.contains(<option value="null">Prefix ...</option>)).toEqual(true);
 });
 
+it("should render a short list of prefixes when common is specified", () => {
+  const onPrefixSelect = stub();
+  const wrapper = mount(<PrefixesSelect onChange={onPrefixSelect} common />);
+  const select = wrapper.find("select");
+  const options = select.find("option");
+  expect(options).toHaveLength(5);
+});
+
+it("should render the full list of prefixes when common is not specified", () => {
+  const onPrefixSelect = stub();
+  const wrapper = mount(<PrefixesSelect onChange={onPrefixSelect} />);
+  const select = wrapper.find("select");
+  const options = select.find("option");
+  expect(options).not.toHaveLength(5);
+});
+
 it("should call onChange when select option is changed", () => {
   const onChange = sinon.spy();
   const event = { currentTarget: { value: 1 } };

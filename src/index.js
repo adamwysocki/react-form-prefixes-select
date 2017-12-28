@@ -31,7 +31,8 @@ type Props = {
   hasDefaultOption?: boolean,
   onChange: Function,
   style?: any,
-  className?: string
+  className?: string,
+  common?: boolean
 };
 
 /**
@@ -47,7 +48,8 @@ class PrefixesSelect extends React.Component<Props> {
     hasDefaultOption: true,
     defaultOptionText: DEFAULT_OPTION_STRING,
     style: {},
-    className: null
+    className: null,
+    common: false
   };
 
   /**
@@ -58,13 +60,15 @@ class PrefixesSelect extends React.Component<Props> {
    * @property {func} onChange - Function to fire with newly selected data
    * @property {Object} style - React style. Javascript object with camelCase css properties.
    * @property {string} className - CSS class. Overrides all default styles (see render method)
+   * @property {bool} common - Display only the most common prefixes.
    */
   static propTypes = {
     hasDefaultOption: PropTypes.bool,
     defaultOptionText: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     style: PropTypes.any,
-    className: PropTypes.string
+    className: PropTypes.string,
+    common: PropTypes.bool
   };
 
   /**
