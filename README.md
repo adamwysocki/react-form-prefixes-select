@@ -1,6 +1,7 @@
 # react-form-prefixes-select
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[ ![Codeship Status for adamwysocki/react-form-prefixes-select](https://app.codeship.com/projects/7e50f6c0-ce37-0135-45f5-6e332806be22/status?branch=master)](https://app.codeship.com/projects/262145)
 
 A React select component that displays name prefixes (Mr, Mrs, Ms) for react forms and fires a callback when a new one is selected.
 
